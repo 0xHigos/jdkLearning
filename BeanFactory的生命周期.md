@@ -1,6 +1,6 @@
 # BeanFactory的生命周期
 
-| 1.BeanFacotry加载Bean配置文件，将读到的Bean配置封装到BeanDefinition |
+| **1.BeanFacotry加载Bean配置文件，将读到的Bean配置封装到BeanDefinition** |
 | ------------------------------------------------------------ |
 | **2.将封装好的BeanDefinition对象注册到BeanDefinition容器中** |
 | **3.注册BeanPostProcessor 相关实现类到BeanPostProcessor容器中** |
