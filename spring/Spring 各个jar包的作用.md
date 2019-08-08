@@ -2,7 +2,7 @@
 
 ![Springä¸»è¦æ¨¡å](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/Spring%E4%B8%BB%E8%A6%81%E6%A8%A1%E5%9D%97.png)
 
-##重要：
+## 重要：
 
 1⃣️：Spring core：基础，主要提供IOC依赖注入的功能，Spring 其他所有的功能都需要依赖该类库。
 
