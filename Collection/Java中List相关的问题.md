@@ -1,9 +1,4 @@
----
-typora-root-url: ../image
-typora-copy-images-to: ../image/LinkedList和ArrayList时间复杂度总结.png
----
-
-### 																					Java中List相关的问题
+### 																														Java中List相关的问题
 
 **[极度推荐的集合源码阅读系列](https://www.cnblogs.com/tong-yuan/p/10810042.html)**
 
@@ -20,4 +15,3 @@ typora-copy-images-to: ../image/LinkedList和ArrayList时间复杂度总结.png
   - **列表末尾**操作元素，性能相差不大。
 
 + ![](/LinkedList和ArrayList时间复杂度总结.png)
-
