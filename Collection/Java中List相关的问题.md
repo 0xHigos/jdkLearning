@@ -14,4 +14,3 @@
   - **列表中间**操作元素，ArrayList 性能耗损在移动位置之后的元素索引，LinkedList耗损在for循环检索该位置的元素。位置靠前 :LinkedList > ArrayList。
   - **列表末尾**操作元素，性能相差不大。
 
-+ ![](/LinkedList和ArrayList时间复杂度总结.png)
