@@ -1,3 +1,7 @@
+---
+typora-root-url: ../image
+---
+
 ### 																					Java中List相关的问题
 
 **[极度推荐的集合源码阅读系列](https://www.cnblogs.com/tong-yuan/p/10810042.html)**
@@ -14,5 +18,4 @@
   - **列表中间**操作元素，ArrayList 性能耗损在移动位置之后的元素索引，LinkedList耗损在for循环检索该位置的元素。位置靠前 :LinkedList > ArrayList。
   - **列表末尾**操作元素，性能相差不大。
 
-
-![LinkedList和ArrayList时间复杂度总结](/Users/xujie/Desktop/屏幕快照 2019-08-12 03.01.23.png)
++ ![LinkedList和ArrayList时间复杂度总结](/LinkedList和ArrayList时间复杂度总结.png)
