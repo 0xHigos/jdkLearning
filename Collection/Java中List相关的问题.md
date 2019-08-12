@@ -450,7 +450,7 @@ private void readObject(java.io.ObjectInputStream s)
 
 + Vector对每个独立操作都实现了**同步**，即某一时刻只有一个线程能够写Vector,避免多线程同时写而引起的不一致性，但是，加锁的操作需要很大的花费，很多时候是得不偿失的。这就导致了性能非常低。
 + Stack继承了Vector,性能不是很好。
-+ Vector包含了大量集合处理的方法。Stack复用了Vector方法来实现push和pop。但是，只是为了复用简单的方法而继承Vector。使得Stack在基于数组实现上效率受影响。
++ Vector包含了大量集合处理的方法。Stack复用了Vector方法来实现push和pop。但是，只是为了复用简单的方法而继承Vector，使得Stack在基于数组实现上效率受影响。
 + Stack可以复用vector大量方法，使得在设计上不严谨。
 
 
