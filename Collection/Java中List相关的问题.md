@@ -77,7 +77,7 @@
     //数组对象有一个额外的元数据，用于表述数组的大小，因为虚拟机需要保存数组的header words 在内存中，额外的8个字节用来描述数组的信息。如果全部分配可能会导致OOM
     ````
 
-+  **add(int index, E element) **  :从指定的位置进行插入
++  **add(int index,E element):**    从指定的位置进行插入
 
 +  ````java
    public void add(int index, E element) {
