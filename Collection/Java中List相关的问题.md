@@ -20,7 +20,7 @@
 
 #### 2.ArrayList是如何实现扩容的？
 
-  + **add(E e)**  ： //从尾部进行插入
+  + **add(E e):**   从尾部进行插入
 
     ````java
     public boolean add(E e) {
@@ -77,7 +77,7 @@
     //数组对象有一个额外的元数据，用于表述数组的大小，因为虚拟机需要保存数组的header words 在内存中，额外的8个字节用来描述数组的信息。如果全部分配可能会导致OOM
     ````
 
-+  **add(int index, E element) **:  从指定的位置进行插入
++  **add(int index, E element) ** : 从指定的位置进行插入
 
 +  ````java
    public void add(int index, E element) {
@@ -117,7 +117,7 @@
 
 #### 4.怎么求两个集合的并集、交集、差集？
 
-+ **addAll(Collection<? extents E> c)：** 是求两个集合的并集：
++ **addAll(Collection<? extents E> c )**  : 求两个集合的并集：
 
   - 拷贝c中的元素到数组a中；
 
@@ -149,7 +149,7 @@
       }
   ````
 
-+ **retailAll(Collection<?> c)**:是求两个集合的交集：
++ **retailAll(Collection<?> c)** :求两个集合的交集：
 
   - 遍历elementData数组；
 
@@ -209,7 +209,7 @@
         }
     ````
 
-+ **removeAll(Collection<?> c)**求两个集合的差集：
++ **removeAll(Collection<?> c)**  求两个集合的差集：
 
   ````java
   public boolean removeAll(Collection<?> c) {
@@ -292,7 +292,6 @@ private void readObject(java.io.ObjectInputStream s)
           List<String> strList = new MyList();
           // 打印结果为class [Ljava.lang.String;
           System.out.println(strList.toArray().getClass());
-          Object[] 
       }
   }
   class MyList extends ArrayList<String>{
@@ -316,47 +315,48 @@ private void readObject(java.io.ObjectInputStream s)
 
   以下是源码：
 
-  - ````java
-    //删除不必要的代码
-    private class Itr implements Iterator<E> {
-           	//首先获取到遍历之前的modCount。
-            int expectedModCount = modCount;
-            public E next() {
-              //在遍历的时候检查modCount == expectedModCount
-              //不等于就抛出  ConcurrentModificationException
-                checkForComodification();
-                try {
-                   	//省略不重要的代码
-                } catch (IndexOutOfBoundsException e) {
-                    checkForComodification();
-                    throw new NoSuchElementException();
-                }
-            }
-            public void remove() {
-                if (lastRet < 0)
-                    throw new IllegalStateException();
-                checkForComodification();
-                try {
-                  //省略不重要的代码
-               //在单线程情况下，remove()是不会抛出异常，
-               //因为它会让expectModcount 和modCount相等。
-                  expectedModCount = modCount;
-                } catch (IndexOutOfBoundsException e) {
-                    throw new ConcurrentModificationException();
-                }
-            }
-            
-    ````
+  ````java
+  //删除不必要的代码
+  private class Itr implements Iterator<E> {
+         	//首先获取到遍历之前的modCount。
+          int expectedModCount = modCount;
+          public E next() {
+            //在遍历的时候检查modCount == expectedModCount
+            //不等于就抛出  ConcurrentModificationException
+              checkForComodification();
+              try {
+                 	//省略不重要的代码
+              } catch (IndexOutOfBoundsException e) {
+                  checkForComodification();
+                  throw new NoSuchElementException();
+              }
+          }
+          public void remove() {
+              if (lastRet < 0)
+                  throw new IllegalStateException();
+              checkForComodification();
+              try {
+                //省略不重要的代码
+             //在单线程情况下，remove()是不会抛出异常，
+             //因为它会让expectModcount 和modCount相等。
+                expectedModCount = modCount;
+              } catch (IndexOutOfBoundsException e) {
+                  throw new ConcurrentModificationException();
+              }
+          }
+  ````
 
-    checkForComodification()的实现：
+  
 
-    ````java
-    final void checkForComodification() {
-                if (modCount != expectedModCount)
-                    throw new ConcurrentModificationException();
-            }
-        }
-    ````
+  checkForComodification()的实现：
+
+  ````java
+  final void checkForComodification() {
+              if (modCount != expectedModCount)
+                  throw new ConcurrentModificationException();
+          }
+      }
+  ````
 
 
 
@@ -420,7 +420,7 @@ private void readObject(java.io.ObjectInputStream s)
 
 #### 15.CopyOnWriteArrayList是不是强一致性的？
 
-+  强一致性==：任意时刻，所有节点中的数据是一样的。同一时间点，在节点A中获取到key1的值与在节点B中获取到key1的值应该都是一样的。任何一次读都能读到某个数据的最近一次写的数据，系统中的所有进程，看到的操作顺序，都和全局时钟下的顺序一致。
++  ==强一致性==：任意时刻，所有节点中的数据是一样的。同一时间点，在节点A中获取到key1的值与在节点B中获取到key1的值应该都是一样的。任何一次读都能读到某个数据的最近一次写的数据，系统中的所有进程，看到的操作顺序，都和全局时钟下的顺序一致。
 
 +  CopyOnWriteArrayList**只保证最终一致性，不保证实时一致性**；
 
@@ -454,11 +454,17 @@ private void readObject(java.io.ObjectInputStream s)
 + Vector包含了大量集合处理的方法。Stack复用了Vector方法来实现push和pop。但是，只是为了复用简单的方法而继承Vector。使得Stack在基于数组实现上效率受影响。
 + Stack可以复用vector大量方法，使得在设计上不严谨。
 
+
+
+
+
+####参考如下：
+
 > https://www.cnblogs.com/leefreeman/archive/2013/05/16/3082400.html
 >
 > https://www.cnblogs.com/tong-yuan/p/LinkedList.html
 >
-> https://www.cnblogs.com/tong-yuan/p/10638902.html
+> [https://cnblogs.com/tong-yuan/p/10638902.html](https://www.cnblogs.com/tong-yuan/p/10638902.html)
 
 
 
