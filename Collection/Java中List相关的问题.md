@@ -96,8 +96,7 @@
      				System.arraycopy用法：
      				从索引index后的所有数据，都向后移动一位
      				eg:  1 2 3 4 5  //index =2
-     									||
-     				     1 2 3 3 4 5 
+     				-->  1 2 3 3 4 5 
      			*/
            elementData[index] = element;  //替换下标为index的值
            size = s + 1;
