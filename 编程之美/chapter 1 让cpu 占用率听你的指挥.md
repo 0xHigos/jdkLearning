@@ -31,5 +31,5 @@ public class Test1 {
 }
 ````
 
-![image-20210317221331415](https://raw.githubusercontent.com/0xHigos/jdkLearning/master/image/image-20210317221331415.png)
+![img](https://raw.githubusercontent.com/0xHigos/jdkLearning/master/image/image-20210317215356215.png)
 
